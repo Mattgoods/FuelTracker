@@ -21,18 +21,21 @@ Before you begin, ensure you have the following installed:
 ### Setup (Recommend doing everything in VS Code using their terminal)
 
 1. **Clone the Repository**
-   
+   ```
    git clone https://github.com/Mattgoods/FuelTracker.git
    cd FuelTracker
+   ```
 
 2. **Setup Python Virtual Environment**
-
+   ```
    python3 -m venv venv
    source venv/bin/activate  # For Windows use `venv\Scripts\activate`
+   ```
 
 3. **Install Dependencies**
-
+   ```
    pip install -r requirements.txt
+   ```
 
 4. **Environment Variables**
    - Not sure what this step is, was recommended by Chat-GPT, probably something we have to do later on once we set up the database.
@@ -42,32 +45,37 @@ Before you begin, ensure you have the following installed:
 5. **Docker Setup**
    - Ensure Docker Desktop is running.
    - Build the Docker image:
-
-     docker-compose build
-
+   ```
+   docker-compose build
+   ```
    - Start the Docker container:
-
-     docker-compose up
+   ```
+   docker-compose up
+   ```
 
 ### Running the Application
 
 - **Using Docker**:
   You can use Docker to run the application. This ensures that the environment is consistent across all team members' machines:
-
-  docker-compose up
+   ```
+   docker-compose up
+   ```
 
   This command will start the application and you can go to `http://localhost:5001` to see the website. Changes will update live as long as you save files.
 
 - **Local Development**:
   This way is probably a little easier but might as well use Docker since it's already set up for the project.
   Start the Flask application by running:
-
-  python run.py
+   ```
+   python run.py
+   ```
 
   Access the application at `http://localhost:5001`.
 
 ### Testing
 
 - Run the automated tests for this system:
+   ```
+   python -m unittest discover
+   ```
 
-  python -m unittest discover
