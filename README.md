@@ -61,7 +61,7 @@ Before you begin, ensure you have the following installed:
    docker-compose up
    ```
 
-  This command will start the application and you can go to `http://localhost:5001` to see the website. Changes will update live as long as you save files.
+  This command will start the application and you can go to `http://localhost:5000` to see the website. Changes will update live as long as you save files.
 
 - **Local Development**:
   This way is probably a little easier but might as well use Docker since it's already set up for the project.
@@ -70,7 +70,7 @@ Before you begin, ensure you have the following installed:
    python run.py
    ```
 
-  Access the application at `http://localhost:5001`.
+  Access the application at `http://localhost:5000`.
 
 ### Testing
 
