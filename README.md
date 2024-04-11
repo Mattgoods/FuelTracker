@@ -79,3 +79,74 @@ Before you begin, ensure you have the following installed:
    python -m unittest discover
    ```
 
+
+## Git Version Control Guidelines
+
+Here’s a quick guide to help us manage our code and changes efficiently:
+
+### Committing Changes
+Keep your commits small and focused. For each significant change or logical update, make a commit:
+
+- **Add changes**: For all files:
+  Almost always:
+  ```
+  git add .
+  ```
+  Or, for specific files:
+  ```
+  git add path/to/your/file
+  ```
+
+- **Commit with a message**: Keep it simple and to the point:
+  ```
+  git commit -m "A brief description of what you changed"
+  ```
+
+### Pushing Changes
+Push your changes to GitHub so everyone can see them:
+
+- **Push to the main branch**:
+  If you've created a new branch, replace `main` with your branch name.
+  ```
+  git push origin main
+  ```
+
+### Pulling Latest Changes
+Always pull the latest changes from the repository before starting to work, especially if others might have made changes:
+
+- **Pull changes**:
+  ```
+  git pull origin main
+  ```
+
+### Handling Merge Conflicts
+If you get a conflict after pulling, Git will tell you which files need attention. Open those files and make the necessary adjustments:
+
+- **After resolving conflicts**:
+  First, add the resolved files:
+  ```
+  git add path/to/resolved/file
+  ```
+  Then, continue by completing the merge:
+  ```
+  git commit
+  ```
+  Git will open an editor for a merge commit message. Save and close to complete the commit.
+
+### Branching
+If you're working on something bigger or experimental, consider using branches:
+
+- **Create a new branch**:
+  ```
+  git checkout -b your-branch-name
+  ```
+
+- **Switch between branches**:
+  ```
+  git checkout other-branch-name
+  ```
+
+- **Merge your branch** (after pulling the latest changes on main and switching back to your branch):
+  ```
+  git merge main
+  ```
