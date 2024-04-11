@@ -1,0 +1,4 @@
+Flask
+SQLAlchemy
+cx_Oracle
+matplotlib
