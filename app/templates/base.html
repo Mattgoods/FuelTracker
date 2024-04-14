@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <title>FuelTracker</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('price_trends') }}">Price Trends</a>
+        <a href="{{ url_for('factor_analysis') }}">Factor Analysis</a>
+        <a href="{{ url_for('regional_comparison') }}">Regional Comparison</a>
+        <a href="{{ url_for('settings') }}">Settings</a>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

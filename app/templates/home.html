@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="homepage">
+    <h1>FuelTracker</h1>
+    <h2>A comprehensive data analysis web app of fuel prices.</h2>
+    <div class="menu">
+        <a href="{{ url_for('price_trends') }}" class="menu-item">
+            <h3>Price Trends</h3>
+            <p>Graph of gas prices based on currently selected factors</p>
+        </a>
+        <a href="{{ url_for('factor_analysis') }}" class="menu-item">
+            <h3>Factor Analysis</h3>
+            <p>Quick access to modifying current factors</p>
+        </a>
+        <a href="{{ url_for('regional_comparison') }}" class="menu-item">
+            <h3>Regional Comparison</h3>
+            <p>Queries involving comparison of factors across multiple regions</p>
+        </a>
+        <a href="{{ url_for('settings') }}" class="menu-item">
+            <h3>Settings</h3>
+            <p>Personal customization</p>
+        </a>
+    </div>
+</div>
+{% endblock %}

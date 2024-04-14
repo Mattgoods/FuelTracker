@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.homepage {
+    text-align: center;
+    padding: 20px;
+}
+
+.homepage h1 {
+    margin-top: 20px;
+    font-size: 48px;
+}
+
+.homepage h2 {
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+.menu .menu-item {
+    text-align: left;
+    padding: 16px;
+    margin: 10px;
+    background-color: #f4f4f4;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.menu .menu-item h3 {
+    font-size: 20px;
+}
+
+.menu .menu-item p {
+    font-size: 16px;
+}
