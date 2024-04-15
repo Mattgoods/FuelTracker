@@ -9,13 +9,19 @@ RUN apt-get update && apt-get install -y \
     gcc \
     libaio1 \
     make \
+    wget \
+    unzip \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Oracle instant client (adjust as necessary for your setup)
-# ADD instantclient-basic-linux.x64-19.3.0.0.0dbru.zip /opt/oracle
-# RUN unzip /opt/oracle/instantclient-basic-linux.x64-19.3.0.0.0dbru.zip -d /opt/oracle \
-#     && sh -c "echo /opt/oracle/instantclient_19_3 > /etc/ld.so.conf.d/oracle-instantclient.conf" \
-#     && ldconfig
+# Download and install Oracle Instant Client
+RUN wget -O instantclient-basic-linux.x64-21.13.0.0.0dbru.zip https://download.oracle.com/otn_software/linux/instantclient/2113000/instantclient-basic-linux.x64-21.13.0.0.0dbru.zip \
+    && unzip instantclient-basic-linux.x64-21.13.0.0.0dbru.zip -d /opt/oracle \
+    && sh -c "echo /opt/oracle/instantclient > /etc/ld.so.conf.d/oracle-instantclient.conf" \
+    && ldconfig \
+    && ls -l /opt/oracle/instantclient
+
+ENV LD_LIBRARY_PATH=/opt/oracle/instantclient_21_13:$LD_LIBRARY_PATH
+ENV PATH=/opt/oracle/instantclient_21_13:$PATH
 
 # Copy the current directory contents into the container at /code
 COPY . /code

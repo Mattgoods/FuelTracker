@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="trend-analysis">
+    <h1>Trend Analysis</h1>
+    <form id="trend-filter" method="post" action="{{ url_for('trend_analysis_data') }}">
+        <label for="fuel-type">Fuel Type:</label>
+        <select name="fuel_type" id="fuel-type">
+            {% for type in fuel_types %}
+            <option value="{{ type }}">{{ type }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="region">Region:</label>
+        <select name="region" id="region">
+            {% for area in regions %}
+            <option value="{{ area }}">{{ area }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="from-date">From:</label>
+        <input type="date" id="from-date" name="from_date" required>
+
+        <label for="to-date">To:</label>
+        <input type="date" id="to-date" name="to_date" required>
+
+        <input type="submit" value="Show Trends">
+    </form>
+
+    <img id="trend-graph" src="" alt="Trend Graph" style="max-width:100%; height:auto;">
+</div>
+
+<script>
+document.getElementById('trend-filter').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    fetch("{{ url_for('trend_analysis_data') }}", {
+        method: 'POST',
+        body: formData
+    }).then(response => response.json())
+      .then(data => {
+          document.getElementById('trend-graph').src = data.image;
+      });
+});
+</script>
+{% endblock %}
