@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "matplotlib": "^1.0.0",
+    "oracledb": "^6.4.0",
+    "pandas": "^0.0.3",
+    "plotly": "^1.0.6"
+  }
+}
