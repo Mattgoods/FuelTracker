@@ -1,4 +1,6 @@
 #import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import oracledb
 #import plotly.express as px
@@ -54,10 +56,12 @@ def get_gasprices_v_stockprices(company, region):
     plt.title(f'Gas Price VS Stock Values of {company}')
     plt.legend()
 
-    # Save the plot as an image
-    plot_path = os.path.join('static', 'plot_gas_vs_stock.png')
+    # Set the path to the 'static/graphs' directory and create if it doesn't exist
+    
+    # Save the plot in 'static/graphs' directory
+    plot_path = 'plot_gas_vs_stock.png'
     plt.savefig(plot_path)
     plt.close()  # Ensure matplotlib does not hold onto the figure
-
+    print(plot_path)
     return plot_path
    

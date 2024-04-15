@@ -1,6 +1,7 @@
-from flask import render_template
-from app import create_app
+from flask import render_template, url_for
 from app.gas_v_stock import get_gasprices_v_stockprices
+from . import create_app
+
 app = create_app()
 
 @app.route('/')
@@ -14,9 +15,9 @@ def price_trends():
 
 @app.route('/gasprice-stock-comparison')
 def gasprice_stock_comparison():
-    # Example usage, replace 'XOM' and 'U.S.' with dynamic values as needed
-    plot_path = get_gasprices_v_stockprices("XOM", "U.S.")
-    return render_template('gasprice_stock_comparison.html', plot_path=plot_path)
+    plot_filename = get_gasprices_v_stockprices("XOM", "U.S.")
+    return render_template('gasprice_stock_comparison.html', plot_filename=plot_filename)
+
 
 @app.route('/factor_analysis')
 def factor_analysis():
